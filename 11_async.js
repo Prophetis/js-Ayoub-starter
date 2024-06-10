@@ -41,9 +41,6 @@ const usingAwait = async cb => {
  * url de test: https://jsonplaceholder.typicode.com/todos/1
  */
 
-//décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
-
 const apiResponse = async url => {
     try {
         const response = await axios.get(url)

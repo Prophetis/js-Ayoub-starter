@@ -1,44 +1,59 @@
 /**
- * utiliser l'opérateur de composition ... afin de fusionner 2 tableaux passés en paramètres
- * 
- * ex: [1, 2, 3], [4, 5, 6] => [1, 2, 3, 4, 5, 6]
- * 
- * contrainte: 
- *  - ne pas utiliser la méthode concat, map, merge, push
- *  - for, foreach, while, do while sont interdits
+ * Utiliser la fonction .map sur le tableau passé en paramètre
+ * pour retourner un nouveau tableau avec les valeurs multipliées par 2
+ *
+ * contraintes:
+ *   - Les mots clées for, while, do while sont interdits
+ *   - les mots clées function et return sont interdits
+ *   - Vous ne pouvez pas utiliser de variable
+ *
  */
 
-const concat = (arr1, arr2) => {}
+const multiplyByTwo = array => array.map(x => x * 2)
 
 /**
- * utiliser l'opérateur de composition ... afin d'ajouter un élément à un tableau
- * 
- * ex: [1, 2, 3], 4 => [1, 2, 3, 4]
- * 
- * contrainte:
- * - ne pas utiliser la méthode push
+ * Utiliser la fonction .filter sur le tableau passé en paramètre
+ * retourne un nouveau tableau avec uniquement les nom qui commencent par la lettre "A"
+ *
+ * contraintes:
+ *   - Les mots clées for, while, do while sont interdits
+ *   - les mots clées function et return sont interdits
+ *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
  */
 
-const push = (arr, item) => {}
+const filterNameStartByA = array => array.filter(name => name.startsWith('A'))
 
 /**
- * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
- * 
- * ex: {a: 1, b: 2}, {c: 3, d: 4} => {a: 1, b: 2, c: 3, d: 4}
+ * Utiliser la fonction .reduce sur le tableau passé en paramètre
+ * retourne la somme des valeurs du tableau
+ *
+ * contraintes:
+ *   - Les mots clées for, while, do while sont interdits
+ *   - les mots clées function et return sont interdits
+ *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
  */
 
-const merge = (obj1, obj2) => {}
+const sum = array => array.reduce((acc, curr) => acc + curr, 0)
 
 /**
- * utiliser l'opérateur de composition ... afin de modifier la propriété name de l'objet
- * 
- * ex: {name: 'toto'}, 'titi' => {name: 'titi'}
- * 
- * contrainte:
- *  - interdiction d'utiliser l'opérateur d'affectation "="
+ * Utiliser la fonction .find sur le tableau passé en paramètre
+ * retourne l'utilisateur qui a l'id passé en 2e paramètre
+ *
+ * exemple d'entrée:
+ * [
+ *  {id: 1, name: 'John'},
+ *  {id: 2, name: 'Doe'},
+ *  {id: 3, name: 'Foo'},
+ *  {id: 4, name: 'Bar'},
+ * ], 3
+ * retour attendu: "Foo"
+ *
+ * contraintes:
+ *   - Les mots clées for, while, do while sont interdits
+ *   - les mots clées function et return sont interdits
+ *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
  */
 
-const setName = (obj, name) => {}
+const findUserById = (array, id) => array.find(user => user.id === id).name
 
-// astuce: {...obj} crée une copie de l'objet, c'est un des principes de l'immutabilité et évite les problèmes de référence
-module.exports = {concat, push, merge, setName}
+module.exports = { multiplyByTwo, filterNameStartByA, sum, findUserById }

@@ -5,9 +5,9 @@
  *    - utiliser l'opérateur ternaire (if interdit)
  */
 function ternaire(a, b) {
-    a > b ? console.log('Yup') : console.log('Nope')
+    return a > b ? a : b
 }
 
-ternaire(1, 2)
+console.log(ternaire(1, 2))
 
 module.exports = ternaire
